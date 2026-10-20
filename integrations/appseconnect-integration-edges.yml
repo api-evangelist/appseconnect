@@ -1,0 +1,18 @@
+generated: '2026-10-20'
+method: none
+source:
+- https://zapier.com/apps/appseconnect/integrations
+- https://zapier.com/apps/appseconnect-corp/integrations
+- https://n8n.io/integrations/appseconnect/
+- https://composio.dev/toolkits/appseconnect
+- https://monid.ai/tools/appseconnect
+checked:
+- https://composio.dev/toolkits/appseconnect
+- https://monid.ai/tools/appseconnect
+- https://n8n.io/integrations/appseconnect/
+- https://zapier.com/apps/appseconnect-corp/integrations
+- https://zapier.com/apps/appseconnect/integrations
+summary: null
+marketplace_apps: []
+edges: []
+templates: []

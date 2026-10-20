@@ -1,23 +1,127 @@
 aid: appseconnect
+
 name: APPSeCONNECT Corp
-description: 'APPSeCONNECT Corp is a company surfaced via the API Evangelist harvest backlog (source:
-  g2-catalog) and added to the network as a stub for full-pipeline profiling.'
+
+image: https://www.appseconnect.com/api/og?title=ERP%20Integration%20Platform%20%26%20AI-Powered%20iPaaS&kind=APPSeCONNECT
+
+description: APPSeCONNECT Corp provides an AI‑powered iPaaS platform that enables seamless integration between ERP, CRM, eCommerce, and other
+  business applications. Their solution offers ready‑to‑deploy integration packages, workflow automation, and AI‑driven data synchronization,
+  helping enterprises accelerate digital transformation and streamline operations across systems such as SAP, Microsoft Dynamics, NetSuite, Shopify,
+  and Magento.
+
 url: https://raw.githubusercontent.com/api-evangelist/appseconnect/refs/heads/main/apis.yml
+
 x-type: company
+
 x-source: harvest:g2-catalog
-x-tier: stub
-x-tier-reason: harvest
+
+x-tier: profiled
+x-tier-reason: enrichment pass 2026-10-20 (modular-v1; was harvest)
+
 specificationVersion: '0.20'
+
 created: '2026-10-20'
+
 modified: '2026-10-20'
+
 tags:
 - Company
-apis: []
+- Integration
+- iPaaS
+- AI
+- ERP
+
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
+
 common:
+- type: Spectral
+  url: rules/appseconnect-rules.yml
+- type: JSONLD
+  url: json-ld/appseconnect-context.jsonld
+- type: Vocabulary
+  url: vocabulary/appseconnect-vocabulary.yml
+- type: DataModel
+  url: data-model/appseconnect-data-model.yml
+- type: Compliance
+  url: https://www.appseconnect.com/security
+- type: Conformance
+  url: conformance/appseconnect-conformance.yml
+- type: LLMsTxt
+  url: llms/appseconnect-llms.txt
+- type: Hosts
+  url: hosts/appseconnect-hosts.yml
+- type: Vendors
+  url: vendors/appseconnect-vendors.yml
+- type: TermsOfService
+  url: https://www.appseconnect.com/terms-of-use/
+- type: SignUp
+  url: https://www.appseconnect.com/register-a-lead
+- type: Security
+  url: https://www.appseconnect.com/security
+- type: PrivacyPolicy
+  url: https://www.appseconnect.com/privacy-policy/
+- type: Leadership
+  url: https://www.appseconnect.com/team
+- type: DeveloperPortal
+  url: https://portal.appseconnect.com/
+- type: ChangeLog
+  url: https://docs.appseconnect.com/release-notes/overview/
+- type: GettingStarted
+  url: //docs.appseconnect.com/api-management/quickstart-guides-to-api-management/
+- type: GitHubOrganization
+  url: https://github.com/appseconnect
+- type: TrustCenter
+  url: security/appseconnect-trust-center.yml
+- type: DomainSecurity
+  url: security/appseconnect-domain-security.yml
 - type: Website
   url: https://appseconnect.com/
+- type: Documentation
+  url: https://docs.appseconnect.com/
+- type: Pricing
+  url: https://www.appseconnect.com/pricing
+- type: Blog
+  url: https://www.appseconnect.com/blog
+- type: Support
+  url: https://www.appseconnect.com/contact
+
+apis:
+- name: APPSeCONNECT API
+  description: Integration platform providing ERP, CRM, eCommerce connectivity via a low-code iPaaS.
+  humanURL: https://docs.appseconnect.com/
+  aid: appseconnect:appseconnect-api-2
+- aid: appseconnect:appseconnect-api
+  name: APPSeCONNECT Corp API
+  description: 'APPSeCONNECT Corp API as documented publicly: 6 operations. Contract generated from the documentation by API Evangelist (2026-10-20);
+
+    not the provider''s own document.'
+  humanURL: https://docs.appseconnect.com/connectors/splitit
+  properties:
+  - type: OpenAPI
+    url: openapi/_ae-authored/appseconnect-openapi-generated.yml
+    x-provenance: generated
+  - type: JSONSchema
+    url: json-schema/appseconnect-post-api-installmentplan-initiate-request-schema.json
+  - type: JSONSchema
+    url: json-schema/appseconnect-get-api-installmentplan-initiate-response-schema.json
+
+x-coverage:
+  state: unreadable
+  reason: no-machine-readable-spec
+  detail: Docs at https://docs.appseconnect.com/ are HTML only and no OpenAPI/Swagger file was found.
+  evidence:
+  - url: https://docs.appseconnect.com/openapi.json
+    status: error
+  - url: https://docs.appseconnect.com/openapi.yaml
+    status: error
+  checked: '2026-10-20'
+x-enrichment:
+  date: '2026-10-20'
+  status: enriched
+  artifacts_added: 18
+  pass: modular-v1
+  engine: identity=local,contract=local,surfaces=local,docs=local,regulatory=local

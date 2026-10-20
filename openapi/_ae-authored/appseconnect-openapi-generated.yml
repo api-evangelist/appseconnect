@@ -1,0 +1,216 @@
+openapi: 3.1.0
+info:
+  title: APPSeCONNECT Corp API
+  version: '2026-10-20'
+  description: 'GENERATED FROM DOCUMENTATION by API Evangelist on 2026-10-20: 6 operation(s) read from 3 public documentation page(s) (each operation
+    names its page in x-source). This is not the provider''s published contract; APPSeCONNECT Corp has published no machine-readable contract
+    that the pipeline could find. Engine: local.'
+  x-evidence-tiers:
+    code-example: 1
+    documentation: 5
+    pages-with-code: 1
+    pages-read: 3
+  x-generated-from: documentation
+  x-provenance: generated
+  x-authored-by: API Evangelist
+  x-generated: '2026-10-20'
+  x-generator: generate-contract-from-docs.py
+  x-engine: local
+  x-sources:
+  - https://docs.appseconnect.com/connectors/splitit
+  - https://docs.appseconnect.com/connectors/amazon-seller-central
+  - https://docs.appseconnect.com/connectors/amazon-vendor
+paths:
+  /api/InstallmentPlan/Initiate:
+    get:
+      operationId: get_api_InstallmentPlan_Initiate
+      tags:
+      - Api
+      summary: Initiate can be called multiple times for the same installment plan.
+      description: Initiate can be called multiple times for the same installment plan. Each time a new API call is made, existing data will be
+        updated and new values will be appended to the existing plan.
+      x-source: https://docs.appseconnect.com/connectors/splitit
+      responses:
+        '200':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetApiInstallmentplanInitiateResponse'
+      x-evidence:
+        kind: documentation
+    post:
+      operationId: post_api_InstallmentPlan_Initiate
+      tags:
+      - Api
+      summary: POST /api/InstallmentPlan/Initiate
+      x-source: https://docs.appseconnect.com/connectors/splitit
+      parameters:
+      - name: format
+        in: query
+        required: false
+        schema:
+          type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PostApiInstallmentplanInitiateRequest'
+      responses:
+        '201':
+          description: Success (status as documented)
+      x-evidence:
+        kind: code-example
+        language: curl
+        snippet: "curl --location --request POST 'https://webapi.sandbox.splitit.com/api/InstallmentPlan/Initiate?format=json'  --header 'Content-Type:\
+          \ application/json'  --data-raw '{\n \"RequestHeader\": {\n \"SessionId\": \"SplititSessionId\",\n \"ApiKey\": \"SplititAPIKey\"\n },\n\
+          \ \"PlanData\": {\n \"Amount\": {\"Value\": 900,\"CurrencyCode\": \"USD\"},\n \"RefOrderNumber\": \"abc123\",\n \"AutoCapture\": true,\n\
+          \ \"ExtendedParams\": {\n \"AnyParamet"
+  /orders/v0/orders:
+    get:
+      operationId: get_orders_v0_orders
+      tags:
+      - Orders
+      summary: This will retrieve order that are currently available in amazon seller central.
+      description: Fetching sales orders from Amazon Seller Central.
+      x-source: https://docs.appseconnect.com/connectors/amazon-seller-central
+      responses:
+        '200':
+          description: Success (status as documented)
+      x-evidence:
+        kind: documentation
+  /products/pricing/v0/price:
+    get:
+      operationId: get_products_pricing_v0_price
+      tags:
+      - Products
+      summary: This will fetch product details.
+      description: This will retrieve products.
+      x-source: https://docs.appseconnect.com/connectors/amazon-seller-central
+      responses:
+        '200':
+          description: Success (status as documented)
+      x-evidence:
+        kind: documentation
+  /vendor/orders/v1/purchaseOrders:
+    get:
+      operationId: get_vendor_orders_v1_purchaseOrders
+      tags:
+      - Vendor
+      summary: Returns a list of purchase orders created during the time frame that you specify.
+      description: This will retrieve orders.
+      x-source: https://docs.appseconnect.com/connectors/amazon-vendor
+      responses:
+        '200':
+          description: Success (status as documented)
+      x-evidence:
+        kind: documentation
+  /vendor/transactions/v1/transactions/{transactionid}:
+    get:
+      operationId: get_vendor_transactions_v1_transactions_transactionid
+      tags:
+      - Vendor
+      summary: Returns the status of the transaction indicated by the specified transactionId.
+      description: Fetching transaction details.
+      x-source: https://docs.appseconnect.com/connectors/amazon-vendor
+      parameters:
+      - name: transactionid
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success (status as documented)
+      x-evidence:
+        kind: documentation
+components:
+  schemas:
+    GetApiInstallmentplanInitiateResponse:
+      type: object
+      properties:
+        '200':
+          type: string
+          description: Successful response
+    PostApiInstallmentplanInitiateRequest:
+      type: object
+      properties:
+        RequestHeader:
+          type: object
+          properties:
+            SessionId:
+              type: string
+            ApiKey:
+              type: string
+        PlanData:
+          type: object
+          properties:
+            Amount:
+              type: object
+              properties:
+                Value:
+                  type: integer
+                CurrencyCode:
+                  type: string
+            RefOrderNumber:
+              type: string
+            AutoCapture:
+              type: boolean
+            ExtendedParams:
+              type: object
+              properties:
+                AnyParameterKey1:
+                  type: string
+                AnyParameterKey2:
+                  type: string
+        BillingAddress:
+          type: object
+          properties:
+            AddressLine:
+              type: string
+            AddressLine2:
+              type: string
+            City:
+              type: string
+            State:
+              type: string
+            Country:
+              type: string
+            Zip:
+              type: string
+        ConsumerData:
+          type: object
+          properties:
+            FullName:
+              type: string
+            Email:
+              type: string
+            PhoneNumber:
+              type: string
+            CultureName:
+              type: string
+        PaymentWizardData:
+          type: object
+          properties:
+            RequestedNumberOfInstallments:
+              type: string
+        RedirectUrls:
+          type: object
+          properties:
+            Succeeded:
+              type: string
+            Failed:
+              type: string
+            Canceled:
+              type: string
+        EventsEndpoints:
+          type: object
+          properties:
+            CreateSucceeded:
+              type: string
+tags:
+- name: Api
+- name: Orders
+- name: Products
+- name: Vendor

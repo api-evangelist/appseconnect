@@ -1,0 +1,42 @@
+generated: '2026-10-20'
+method: derived
+generator: derive-vocabulary.py
+source: openapi/_ae-authored/appseconnect-openapi-generated.yml
+vocabulary:
+  name: APPSeCONNECT Corp Domain Vocabulary
+  description: 'Terms declared by APPSeCONNECT Corp''s own API contract: its resource groups, objects and enumerations, with the contract''s definitions.
+    Derived, not authored.'
+  version: '2026-10-20'
+  terms:
+  - term: GetApiInstallmentplanInitiateResponse
+    definition: 'Object declared by the contract with fields: 200.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/appseconnect-openapi-generated.yml#/components/schemas/GetApiInstallmentplanInitiateResponse
+  - term: PostApiInstallmentplanInitiateRequest
+    definition: 'Object declared by the contract with fields: RequestHeader, PlanData, BillingAddress, ConsumerData, PaymentWizardData, RedirectUrls,
+      EventsEndpoints.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/appseconnect-openapi-generated.yml#/components/schemas/PostApiInstallmentplanInitiateRequest
+  - term: Api
+    definition: 'Resource group in the contract; its operation GET /api/InstallmentPlan/Initiate: Initiate can be called multiple times for the
+      same installment plan.'
+    tags:
+    - Resource Group
+    source: openapi/_ae-authored/appseconnect-openapi-generated.yml
+  - term: Orders
+    definition: 'Resource group in the contract; its operation GET /orders/v0/orders: Fetching sales orders from Amazon Seller Central.'
+    tags:
+    - Resource Group
+    source: openapi/_ae-authored/appseconnect-openapi-generated.yml
+  - term: Products
+    definition: 'Resource group in the contract; its operation GET /products/pricing/v0/price: This will retrieve products.'
+    tags:
+    - Resource Group
+    source: openapi/_ae-authored/appseconnect-openapi-generated.yml
+  - term: Vendor
+    definition: 'Resource group in the contract; its operation GET /vendor/orders/v1/purchaseOrders: This will retrieve orders.'
+    tags:
+    - Resource Group
+    source: openapi/_ae-authored/appseconnect-openapi-generated.yml

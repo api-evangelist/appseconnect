@@ -1,0 +1,16 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/appseconnect/main/json-schema/appseconnect-get-api-installmentplan-initiate-response-schema.json",
+  "title": "GetApiInstallmentplanInitiateResponse",
+  "x-generated": "2026-10-20",
+  "x-method": "derived",
+  "x-generator": "derive-json-schema.py",
+  "x-source": "openapi/_ae-authored/appseconnect-openapi-generated.yml#/components/schemas/GetApiInstallmentplanInitiateResponse",
+  "type": "object",
+  "properties": {
+    "200": {
+      "type": "string",
+      "description": "Successful response"
+    }
+  }
+}

@@ -1,0 +1,126 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/appseconnect/main/json-schema/appseconnect-post-api-installmentplan-initiate-request-schema.json",
+  "title": "PostApiInstallmentplanInitiateRequest",
+  "x-generated": "2026-10-20",
+  "x-method": "derived",
+  "x-generator": "derive-json-schema.py",
+  "x-source": "openapi/_ae-authored/appseconnect-openapi-generated.yml#/components/schemas/PostApiInstallmentplanInitiateRequest",
+  "type": "object",
+  "properties": {
+    "RequestHeader": {
+      "type": "object",
+      "properties": {
+        "SessionId": {
+          "type": "string"
+        },
+        "ApiKey": {
+          "type": "string"
+        }
+      }
+    },
+    "PlanData": {
+      "type": "object",
+      "properties": {
+        "Amount": {
+          "type": "object",
+          "properties": {
+            "Value": {
+              "type": "integer"
+            },
+            "CurrencyCode": {
+              "type": "string"
+            }
+          }
+        },
+        "RefOrderNumber": {
+          "type": "string"
+        },
+        "AutoCapture": {
+          "type": "boolean"
+        },
+        "ExtendedParams": {
+          "type": "object",
+          "properties": {
+            "AnyParameterKey1": {
+              "type": "string"
+            },
+            "AnyParameterKey2": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "BillingAddress": {
+      "type": "object",
+      "properties": {
+        "AddressLine": {
+          "type": "string"
+        },
+        "AddressLine2": {
+          "type": "string"
+        },
+        "City": {
+          "type": "string"
+        },
+        "State": {
+          "type": "string"
+        },
+        "Country": {
+          "type": "string"
+        },
+        "Zip": {
+          "type": "string"
+        }
+      }
+    },
+    "ConsumerData": {
+      "type": "object",
+      "properties": {
+        "FullName": {
+          "type": "string"
+        },
+        "Email": {
+          "type": "string"
+        },
+        "PhoneNumber": {
+          "type": "string"
+        },
+        "CultureName": {
+          "type": "string"
+        }
+      }
+    },
+    "PaymentWizardData": {
+      "type": "object",
+      "properties": {
+        "RequestedNumberOfInstallments": {
+          "type": "string"
+        }
+      }
+    },
+    "RedirectUrls": {
+      "type": "object",
+      "properties": {
+        "Succeeded": {
+          "type": "string"
+        },
+        "Failed": {
+          "type": "string"
+        },
+        "Canceled": {
+          "type": "string"
+        }
+      }
+    },
+    "EventsEndpoints": {
+      "type": "object",
+      "properties": {
+        "CreateSucceeded": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}
